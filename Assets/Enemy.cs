@@ -10,7 +10,7 @@ public class Enemy : MonoBehaviour
     public Transform[] waypoints;
     public Collider hitbox;
     bool aggressive = false;
-    Vector3 here = transform.position;
+    Vector3 here;
     int m_WaypointIndex;
 
     // Start is called before the first frame update
@@ -19,6 +19,7 @@ public class Enemy : MonoBehaviour
         //navMeshAgent.SetDestination(destination);
         //navMeshAgent.SetDestination(waypoints[0].position);
         bool aggressive = false;
+        here = transform.position
     }
 
     // Update is called once per frame
