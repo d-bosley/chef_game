@@ -24,5 +24,6 @@ public class SpawnerButton : MonoBehaviour
     void OnTriggerEnter()
     {
         spawnScript.enemyClone(1);
+        Debug.Log("PressedIt");
     }
 }
