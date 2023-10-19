@@ -19,19 +19,19 @@ public class Enemy : MonoBehaviour
         //navMeshAgent.SetDestination(destination);
         //navMeshAgent.SetDestination(waypoints[0].position);
         bool aggressive = false;
-        here = transform.position
+        here = transform.position;
     }
 
     // Update is called once per frame
     void Update()
     {
-        //navMeshAgent.SetDestination(destination);
+        navMeshAgent.SetDestination(destination);
 
         if(!aggressive)
         {
-            SetMovementDestination(here, out Vector3 finalPlace);
-            destination = finalPlace;
-            transform.position = Vector3.Lerp(here, destination, .5f);
+            //SetMovementDestination(here, out Vector3 finalPlace);
+            //destination = finalPlace;
+            //transform.position = Vector3.Lerp(here, destination, .5f);
         }
 
         //if(navMeshAgent.remainingDistance < navMeshAgent.stoppingDistance)
