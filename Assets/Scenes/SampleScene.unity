@@ -122,7 +122,7 @@ NavMeshSettings:
     preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 0}
+  m_NavMeshData: {fileID: 23800000, guid: 97280d1f717e58b4ea9bd11f3d3029ce, type: 2}
 --- !u!1001 &19408399
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1684,7 +1684,7 @@ GameObject:
   - component: {fileID: 356998513}
   m_Layer: 0
   m_Name: eyes
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4599,8 +4599,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.18983029, y: 0.000000015027519, z: -0.0000000029055087, w: 0.98181695}
-  m_LocalPosition: {x: 1, y: 10.540001, z: -392.19}
+  m_LocalRotation: {x: 0.18983027, y: 0.000000016893518, z: -0.000000003266292, w: 0.98181695}
+  m_LocalPosition: {x: -20.6, y: 7.8200006, z: -360.49002}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4960,7 +4960,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1014211811}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1, y: 6.22, z: -380.9}
+  m_LocalPosition: {x: -20.6, y: 3.5, z: -349.2}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -5169,7 +5169,7 @@ CapsuleCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
   m_Height: 0.5
@@ -6532,8 +6532,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1211372977}
-  m_LocalRotation: {x: 0.18983029, y: 0.000000015027519, z: -0.0000000029055087, w: 0.98181695}
-  m_LocalPosition: {x: 1, y: 10.540001, z: -392.19}
+  m_LocalRotation: {x: 0.18983027, y: 0.000000016893518, z: -0.000000003266292, w: 0.98181695}
+  m_LocalPosition: {x: -20.6, y: 7.8200006, z: -360.49002}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6618,7 +6618,7 @@ GameObject:
   - component: {fileID: 1268972847}
   m_Layer: 0
   m_Name: pivotPoint
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21831,7 +21831,7 @@ GameObject:
   m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!65 &1694910456
 BoxCollider:
@@ -22435,7 +22435,7 @@ GameObject:
   - component: {fileID: 1834796536}
   m_Layer: 3
   m_Name: groundColliderTest
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -22643,9 +22643,9 @@ GameObject:
   - component: {fileID: 1908211098}
   - component: {fileID: 1908211097}
   - component: {fileID: 1908211096}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: groundCollider2
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -22658,7 +22658,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1908211094}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -22682,10 +22682,10 @@ CapsuleCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
-  m_Height: 2
+  m_Height: 1.31
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1908211097
@@ -23353,7 +23353,7 @@ GameObject:
   - component: {fileID: 2013378695}
   m_Layer: 0
   m_Name: eatBox
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

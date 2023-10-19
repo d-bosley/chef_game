@@ -29,9 +29,14 @@ public class Enemy : MonoBehaviour
 
         if(!aggressive)
         {
-            //SetMovementDestination(here, out Vector3 finalPlace);
-            //destination = finalPlace;
-            //transform.position = Vector3.Lerp(here, destination, .5f);
+            SetMovementDestination(here, out Vector3 finalPlace);
+            destination = finalPlace;
+            transform.position = Vector3.Lerp(transform.position, destination, .5f);
+        }
+
+        if(aggressive && Vector3.Distance(destination, transform.position) > 5)
+        {
+            Vector3.Lerp(transform.position, destination, .5f);
         }
 
         //if(navMeshAgent.remainingDistance < navMeshAgent.stoppingDistance)
@@ -55,7 +60,7 @@ public class Enemy : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if(other.CompareTag("Player"))
         {
             aggressive = true;
             destination = other.transform.position;
