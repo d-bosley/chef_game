@@ -21,7 +21,7 @@ public class SpawnerButton : MonoBehaviour
         
     }
 
-    void OnTriggerEnter()
+    void OnTriggerEnter(Collision other)
     {
         if(other.CompareTag("Player"))
         {
