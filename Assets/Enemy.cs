@@ -36,7 +36,7 @@ public class Enemy : MonoBehaviour
 
         if(aggressive && Vector3.Distance(destination, transform.position) > 5)
         {
-            Vector3.Lerp(transform.position, destination, .5f);
+            Vector3.MoveTowards(transform.position, destination, .5f);
         }
 
         //if(navMeshAgent.remainingDistance < navMeshAgent.stoppingDistance)
