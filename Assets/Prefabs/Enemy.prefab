@@ -341,7 +341,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0e579a7d7fd57f4c9814f781f1f0d0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  navMeshAgent: {fileID: 0}
+  navMeshAgent: {fileID: 6552261707553612889}
   destination: {x: 0, y: 0, z: 0}
   waypoints: []
   hitbox: {fileID: 8419846102888973613}
