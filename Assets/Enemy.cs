@@ -65,10 +65,14 @@ public class Enemy : MonoBehaviour
             aggressive = true;
             destination = other.transform.position;
         }
-        else
+    }
+
+        void OnTriggerExit(Collider other)
+    {
+        if(other.CompareTag("Player"))
         {
             aggressive = false;
+            destination = destination;
         }
-
     }
 }
