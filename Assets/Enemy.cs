@@ -9,7 +9,7 @@ public class Enemy : MonoBehaviour
     [HideInInspector] public Vector3 destination;
     public Transform[] waypoints;
     public Collider hitbox;
-    bool aggressive = false;
+    public bool aggressive = false;
     Vector3 here;
     int m_WaypointIndex;
 
