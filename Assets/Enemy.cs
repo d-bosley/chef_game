@@ -31,12 +31,7 @@ public class Enemy : MonoBehaviour
         {
             SetMovementDestination(here, out Vector3 finalPlace);
             destination = finalPlace;
-            transform.position = Vector3.Lerp(transform.position, destination, .5f);
-        }
-
-        if(aggressive && Vector3.Distance(destination, transform.position) > 5)
-        {
-            Vector3.MoveTowards(transform.position, destination, .5f);
+            transform.position = Vector3.MoveTowards(transform.position, destination, .35f);
         }
 
         //if(navMeshAgent.remainingDistance < navMeshAgent.stoppingDistance)
