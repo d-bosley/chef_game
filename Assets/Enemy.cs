@@ -28,7 +28,8 @@ public class Enemy : MonoBehaviour
 
         if(!aggressive)
         {
-            SetMovementDestination(here, out destination);
+            SetMovementDestination(here, out Vector3 finalPlace);
+            destination = finalPlace;
             transform.position = Vector3.Lerp(here, destination, .5f);
         }
 
