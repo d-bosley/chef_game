@@ -15,22 +15,18 @@ public class Spawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //spawns = spawnParent.GetComponentsInChildren<Transform>();
+        spawns = spawnParent.GetComponentsInChildren<Transform>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        //ClockCycle();
+
     }
 
     void ClockCycle()
     {
-    
-    spawnClock -= 1 * Time.deltaTime;
-	if (spawnClock <= 0){
-    enemyClone(1);
-    spawnClock = 5;}
+
     }
 
     void enemyClone(int spawn)
