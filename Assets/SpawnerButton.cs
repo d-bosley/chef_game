@@ -23,6 +23,9 @@ public class SpawnerButton : MonoBehaviour
 
     void OnTriggerEnter()
     {
-        spawnScript.enemyClone(1);
+        if(other.CompareTag("Player"))
+        {
+            spawnScript.enemyClone(1);
+        }
     }
 }
