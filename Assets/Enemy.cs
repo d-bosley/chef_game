@@ -55,7 +55,7 @@ public class Enemy : MonoBehaviour
         float xOffset = amplitude * Mathf.Sin(Time.time * frequency);
 
         // Update the object's position to move back and forth along the x-axis
-        newPosition = initialPosition + (new Vector3(xOffset, transform.position.y, transform.position.z));
+        newPosition = initialPosition + (Vector3.right * xOffset);
     }
 
     void OnTriggerEnter(Collider other)
