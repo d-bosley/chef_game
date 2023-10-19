@@ -65,6 +65,10 @@ public class Enemy : MonoBehaviour
             aggressive = true;
             destination = other.transform.position;
         }
+        else
+        {
+            aggressive = false;
+        }
 
     }
 }
