@@ -28,8 +28,8 @@ public class Enemy : MonoBehaviour
 
         if(!aggressive)
         {
-            SetMovementDestination(transform.position, out destination);
-            Vector3.Lerp(tras)
+            SetMovementDestination(here, out destination);
+            transform.position = Vector3.Lerp(here, destination, .5f);
         }
 
         //if(navMeshAgent.remainingDistance < navMeshAgent.stoppingDistance)
