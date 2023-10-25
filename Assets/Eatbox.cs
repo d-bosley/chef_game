@@ -23,7 +23,7 @@ public class Eatbox : MonoBehaviour
         if (other.CompareTag("Enemy"))
         {
             Destroy(other, 0);
-            player.transform.localScale *= 2;
+            player.transform.localScale = Mathf.Clamp(player.transform.localScale * 2, new Vector3(.5f, .5f, .5f), new Vector3(5, 5, 5));
         }
 
     }
