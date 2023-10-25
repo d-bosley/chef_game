@@ -33,7 +33,7 @@ public class BasicPhysics : MonoBehaviour
     float forceMove = 0f;
     float forceFall = 0f;
     float groundAngle;
-    float scaleCheck = transform.localScale.magnitude;
+    float scaleCheck;
     float groundCheck = .3f;
     float rotationLock = 5;
     float resetGrav;
@@ -77,7 +77,8 @@ public class BasicPhysics : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
+    {   
+        scaleCheck = transform.localScale.magnitude;
         Debug.DrawRay(transform.position, -playerUp.normalized * (scaleCheck + groundCheck), Color.red, 0);
         float joyH = Input.GetAxis("Horizontal");
         float joyV = Input.GetAxis("Vertical");
