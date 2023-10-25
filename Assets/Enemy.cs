@@ -6,7 +6,7 @@ using UnityEngine.AI;
 public class Enemy : MonoBehaviour
 {
     [HideInInspector] public Vector3 destination;
-    [HideInInspector] public Transform movezone
+    [HideInInspector] public Transform movezone;
     public Collider hitbox;
     public bool aggressive = false;
     Vector3 here;
