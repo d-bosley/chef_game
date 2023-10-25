@@ -46,19 +46,19 @@ public class Enemy : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("Player"))
-        {
-            aggressive = true;
-            destination = other.transform.position;
-        }
+//        if(other.CompareTag("Player"))
+//        {
+//            aggressive = true;
+//            destination = other.transform.position;
+//        }
     }
 
         void OnTriggerExit(Collider other)
     {
-        if(other.CompareTag("Player"))
-        {
-            aggressive = false;
-            destination = destination;
-        }
+//        if(other.CompareTag("Player"))
+//        {
+//            aggressive = false;
+//            destination = destination;
+//        }
     }
 }
