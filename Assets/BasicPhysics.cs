@@ -107,7 +107,7 @@ public class BasicPhysics : MonoBehaviour
             groundAngle = Vector3.Angle(worldUp, groundNormal);
             groundCheck = .1f;
             if(groundAngle <= 60){playerUp = worldUp;} else{playerUp = groundNormal;}
-            playerBody.position = groundPoint + (Vector3.up * scaleCheck + groundCheck);
+            playerBody.position = groundPoint + (Vector3.up * (scaleCheck + groundCheck));
             GetMoving();
         }
     else
