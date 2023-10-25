@@ -24,11 +24,6 @@ public class Spawner : MonoBehaviour
 
     }
 
-    void ClockCycle()
-    {
-
-    }
-
     public void enemyClone(int spawn)
     {
         GameObject enemyClone = Instantiate(enemy, spawns[spawn].position, Quaternion.identity);

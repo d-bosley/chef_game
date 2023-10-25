@@ -25,7 +25,12 @@ public class SpawnerButton : MonoBehaviour
     {
         if(other.CompareTag("Player"))
         {
-            spawnScript.enemyClone(1);
+            for(float i = 0, i < 4, i++)
+            {
+                spawnScript.enemyClone(i);
+            }
+            
+            //spawnScript.enemyClone(1);
         }
     }
 }
