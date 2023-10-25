@@ -25,7 +25,7 @@ public class SpawnerButton : MonoBehaviour
     {
         if(other.CompareTag("Player"))
         {
-            for(float i = 0, i < 4, i++)
+            for(int i = 0; i < 4; i++)
             {
                 spawnScript.enemyClone(i);
             }
