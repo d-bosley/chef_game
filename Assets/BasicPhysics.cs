@@ -83,6 +83,7 @@ public class BasicPhysics : MonoBehaviour
         jumpInput = Input.GetButton("Jump") ? 1 : 0;
         playerInput = new Vector3(joyH, 0f, joyV);
         lvcv = playerBody.velocity.magnitude;
+        if(Input.GetButton("Eat")){eatBox.enabled = true;}else{eatBox.enabled = false;}
     }
 
     void FixedUpdate()
