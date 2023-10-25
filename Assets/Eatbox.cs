@@ -24,7 +24,9 @@ public class Eatbox : MonoBehaviour
         {
             Destroy(other, 0);
             Vector3 scale = player.transform.localScale;
-            scale = Mathf.Clamp(scale * 2, new Vector3(.5f, .5f, .5f), new Vector3(5f, 5f, 5f));
+            float radius = 5;
+            scale *= 2;
+            scale = Vector3.ClampMagnitude(scale, radius);
             player.transform.localScale = scale;
         }
 
