@@ -45,7 +45,7 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 200
+  m_Intensity: 150
   m_Range: 30
   m_SpotAngle: 136.52673
   m_InnerSpotAngle: 35.340706
@@ -163,7 +163,7 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 200
+  m_Intensity: 150
   m_Range: 30
   m_SpotAngle: 136.52673
   m_InnerSpotAngle: 35.340706
