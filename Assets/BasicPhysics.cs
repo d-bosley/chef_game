@@ -33,7 +33,8 @@ public class BasicPhysics : MonoBehaviour
     float forceMove = 0f;
     float forceFall = 0f;
     float groundAngle;
-    float groundCheck = .8f;
+    float scaleCheck = transform.localScale.magnitude;
+    float groundCheck = .3f;
     float rotationLock = 5;
     float resetGrav;
     float height; // How tall the Player is which will scale as they progress (Default: 1 unit tall)
@@ -77,7 +78,7 @@ public class BasicPhysics : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.DrawRay(transform.position, -playerUp.normalized * (groundCheck), Color.red, 0);
+        Debug.DrawRay(transform.position, -playerUp.normalized * (scaleCheck + groundCheck), Color.red, 0);
         float joyH = Input.GetAxis("Horizontal");
         float joyV = Input.GetAxis("Vertical");
         jumpInput = Input.GetButton("Jump") ? 1 : 0;
@@ -97,16 +98,16 @@ public class BasicPhysics : MonoBehaviour
     // Run through code steps to begin applying the physics
 
     // Raycast to detect ground
-    if(Physics.Raycast(transform.position, -playerUp.normalized, out hit, groundCheck, GetGround()))
+    if(Physics.Raycast(transform.position, -playerUp.normalized, out hit, scaleCheck + groundCheck, GetGround()))
         {
             isGrounded = true;
             isFalling = false;
             groundNormal = hit.normal.normalized;
             groundPoint = hit.point;
             groundAngle = Vector3.Angle(worldUp, groundNormal);
-            groundCheck = .5f;
+            groundCheck = .1f;
             if(groundAngle <= 60){playerUp = worldUp;} else{playerUp = groundNormal;}
-            playerBody.position = groundPoint + (Vector3.up * groundCheck);
+            playerBody.position = groundPoint + (Vector3.up * scaleCheck + groundCheck);
             GetMoving();
         }
     else
@@ -115,7 +116,7 @@ public class BasicPhysics : MonoBehaviour
             isFalling = true;
             playerUp = worldUp;
             groundNormal = playerUp;
-            groundCheck = .8f;
+            groundCheck = .3f;
             GetFalling();
         }
 
