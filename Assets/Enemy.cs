@@ -5,19 +5,18 @@ using UnityEngine.AI;
 
 public class Enemy : MonoBehaviour
 {
-    public NavMeshAgent navMeshAgent;
     [HideInInspector] public Vector3 destination;
-    public Transform[] waypoints;
+    [HideInInspector] public Transform movezone
     public Collider hitbox;
     public bool aggressive = false;
     Vector3 here;
+    Rigidbody enemy;
+    public Transform[] waypoints;
     int m_WaypointIndex;
 
     // Start is called before the first frame update
     void Start()
     {
-        //navMeshAgent.SetDestination(destination);
-        //navMeshAgent.SetDestination(waypoints[0].position);
         bool aggressive = false;
         here = transform.position;
     }
@@ -25,20 +24,12 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        navMeshAgent.SetDestination(destination);
-
         if(!aggressive)
         {
             SetMovementDestination(here, out Vector3 finalPlace);
             destination = finalPlace;
             transform.position = Vector3.MoveTowards(transform.position, destination, .35f);
         }
-
-        //if(navMeshAgent.remainingDistance < navMeshAgent.stoppingDistance)
-        //{
-        //    m_WaypointIndex = (m_WaypointIndex + 1) % waypoints.Length;
-        //    navMeshAgent.SetDestination(waypoints[m_WaypointIndex].position);
-        //}
     }
 
     void SetMovementDestination(Vector3 initialPosition, out Vector3 newPosition)
