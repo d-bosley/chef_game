@@ -50,6 +50,17 @@ public class Enemy : MonoBehaviour
         lastWanderTime = Time.time;
     }
 
+    void ChasePlayer()
+    {
+        navMeshAgent.SetDestination(player.position);
+    }
+
+    void StopChasingPlayer()
+    {
+        Vector3 moveAway = transform.position - (player.position - transform.position).normalized;
+        navMeshAgent.SetDestination(moveAway);
+    }
+
     static void RandomNavCube(Vector3 origin, float distance, int layerMask, out Vector3 destination)
     {
         Vector3 randomDirection = Random.insideUnitSphere * distance;
