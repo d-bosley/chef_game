@@ -15,7 +15,7 @@ public class EnemyHolder : MonoBehaviour
     void Start()
     {
         int spawnTimer = 5;
-        spawnTimer -= Time.Time;
+        spawnTimer -= 1 * Time.deltaTime;
 
         if(spawnTimer >= 0)
         {
