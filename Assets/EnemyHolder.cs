@@ -14,10 +14,16 @@ public class EnemyHolder : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        int spawnTimer = 5;
+        spawnTimer -= Time.Time;
+
+        if(spawnTimer >= 0)
+        {
         for(int i = 0; i < maxEnemy; i++)
         {
             spawnScript.enemyClone(i, parent);
             Debug.Log("Enemy " + i + " has spawned");
+        }
         }
     }
 
@@ -39,6 +45,8 @@ public class EnemyHolder : MonoBehaviour
             int enemyCheck = currentEnemies + 1; 
             spawnScript.enemyClone(enemyCheck, parent);
         }
+
+        Debug.Log(currentEnemies);
     }
 
     void OnTriggerEnter(Collider other)
