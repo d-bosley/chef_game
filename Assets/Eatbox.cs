@@ -20,15 +20,15 @@ public class Eatbox : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Enemy"))
-        {
-            Destroy(other.gameObject, .015f);
-            Vector3 scale = player.transform.localScale;
-            float radius = 5;
-            scale *= 1.5f;
-            scale = Vector3.ClampMagnitude(scale, radius);
-            player.transform.localScale = scale;
-        }
+        //if (other.CompareTag("Enemy"))
+        //{
+            //Destroy(other.gameObject, .015f);
+            //Vector3 scale = player.transform.localScale;
+            //float radius = 5;
+            //scale *= 1.5f;
+            //scale = Vector3.ClampMagnitude(scale, radius);
+            //player.transform.localScale = scale;
+        //}
 
     }
 }
