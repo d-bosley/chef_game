@@ -14,7 +14,7 @@ public class EnemyHolder : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        int spawnTimer = 5;
+        float spawnTimer = 5;
         spawnTimer -= 1 * Time.deltaTime;
 
         if(spawnTimer >= 0)
@@ -24,6 +24,7 @@ public class EnemyHolder : MonoBehaviour
             spawnScript.enemyClone(i, parent);
             Debug.Log("Enemy " + i + " has spawned");
         }
+        spawnTimer = 1;
         }
     }
 
