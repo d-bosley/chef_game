@@ -53,12 +53,12 @@ public class Enemy : MonoBehaviour
 
     void ChasePlayer(GameObject player)
     {
-        navmesh.SetDestination(player.position);
+        navmesh.SetDestination(player.transform.position);
     }
 
     void StopChasingPlayer(GameObject player)
     {
-        Vector3 moveAway = transform.position - (player.position - transform.position).normalized;
+        Vector3 moveAway = transform.position - (player.transform.position - transform.position).normalized;
         navmesh.SetDestination(moveAway);
     }
 
