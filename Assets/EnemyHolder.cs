@@ -17,6 +17,7 @@ public class EnemyHolder : MonoBehaviour
         for(int i = 0; i < maxEnemy; i++)
         {
             spawnScript.enemyClone(i, parent);
+            Debug.Log("Enemy " + i + " has spawned");
         }
     }
 
