@@ -50,15 +50,15 @@ public class Enemy : MonoBehaviour
         lastWanderTime = Time.time;
     }
 
-    void ChasePlayer()
+    void ChasePlayer(GameObject player)
     {
-        navMeshAgent.SetDestination(player.position);
+        navmesh.SetDestination(player.position);
     }
 
-    void StopChasingPlayer()
+    void StopChasingPlayer(GameObject player)
     {
         Vector3 moveAway = transform.position - (player.position - transform.position).normalized;
-        navMeshAgent.SetDestination(moveAway);
+        navmesh.SetDestination(moveAway);
     }
 
     static void RandomNavCube(Vector3 origin, float distance, int layerMask, out Vector3 destination)
