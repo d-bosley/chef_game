@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Damage : MonoBehaviour
 {
+    public GameObject player;
     bool larger = false;
 
     // Start is called before the first frame update
