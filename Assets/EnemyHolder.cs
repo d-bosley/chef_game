@@ -48,16 +48,4 @@ public class EnemyHolder : MonoBehaviour
 
         Debug.Log(currentEnemies);
     }
-
-    void OnTriggerEnter(Collider other)
-    {
-//        if(other.CompareTag("Player"))
-//        {
-//            for(int i = 0; i < 4; i++)
-//            {
-//                spawnScript.enemyClone(i);
-//                enemyClone.transform.parent = parent;
-//            }
-//        }
-    }
 }
