@@ -9,6 +9,7 @@ public class Enemy : MonoBehaviour
     [HideInInspector] public Transform movezone;
     public Collider hitbox;
     public bool aggressive = false;
+    public bool afraid = false;
     Vector3 here;
     Rigidbody enemy;
     public Transform[] waypoints;
