@@ -45,7 +45,7 @@ public class Enemy : MonoBehaviour
 
     void Wander()
     {
-        RandomNavCube(wanderingArea.position, wanderRadius, -1, randomDestination);
+        RandomNavCube(wanderingArea.position, wanderRadius, -1, out randomDestination);
         navmesh.SetDestination(randomDestination);
         lastWanderTime = Time.time;
     }
