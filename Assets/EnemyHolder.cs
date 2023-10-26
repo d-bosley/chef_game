@@ -17,7 +17,7 @@ public class EnemyHolder : MonoBehaviour
         for(int i = 0; i < maxEnemy; i++)
         {
             spawnScript.enemyClone(i);
-            enemyClone.transform.parent = parent;
+            //enemyClone.transform.parent = parent;
         }
 
         children = new Transform[transform.childCount];
@@ -31,7 +31,7 @@ public class EnemyHolder : MonoBehaviour
     void Update()
     {
         currentEnemies = children.Length;
-        
+
         if(currentEnemies < maxEnemy)
         {
             int enemyCheck = currentEnemies + 1; 
