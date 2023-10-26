@@ -16,27 +16,27 @@ public class EnemyHolder : MonoBehaviour
     {
         for(int i = 0; i < maxEnemy; i++)
         {
-            spawnScript.enemyClone(i);
-            //enemyClone.transform.parent = parent;
-        }
-
-        children = new Transform[transform.childCount];
-        for (int i = 0; i < transform.childCount; i++)
-        {
-            children[i] = transform.GetChild(i);
+            spawnScript.enemyClone(i, parent);
         }
     }
 
     // Update is called once per frame
     void Update()
     {
-        currentEnemies = children.Length;
+        //children = new Transform[transform.childCount];
+        //for (int i = 0; i < transform.childCount; i++)
+        //{
+        //    children[i] = transform.GetChild(i);
+        //}
+
+        //currentEnemies = children.Length;
+        
+        currentEnemies = transform.childCount;
 
         if(currentEnemies < maxEnemy)
         {
             int enemyCheck = currentEnemies + 1; 
-            spawnScript.enemyClone(enemyCheck);
-            currentEnemies += 1;
+            spawnScript.enemyClone(enemyCheck, parent);
         }
     }
 

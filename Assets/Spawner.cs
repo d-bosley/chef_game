@@ -24,8 +24,8 @@ public class Spawner : MonoBehaviour
 
     }
 
-    public void enemyClone(int spawn)
+    public void enemyClone(int spawn, Transform parent)
     {
-        GameObject enemyClone = Instantiate(enemy, spawns[spawn].position, Quaternion.identity);
+        GameObject enemyClone = Instantiate(enemy, spawns[spawn].position, Quaternion.identity, parent);
     }
 }
