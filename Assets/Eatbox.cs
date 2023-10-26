@@ -22,8 +22,12 @@ public class Eatbox : MonoBehaviour
     {
         if (other.CompareTag("Enemy"))
         {
-            Destroy(other, 0);
-            player.transform.localScale *= 2;
+            Destroy(other.gameObject, 1f);
+            Vector3 scale = player.transform.localScale;
+            float radius = 5;
+            scale *= 2;
+            scale = Vector3.ClampMagnitude(scale, radius);
+            player.transform.localScale = scale;
         }
 
     }

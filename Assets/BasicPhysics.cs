@@ -33,7 +33,8 @@ public class BasicPhysics : MonoBehaviour
     float forceMove = 0f;
     float forceFall = 0f;
     float groundAngle;
-    float groundCheck = .8f;
+    float scaleCheck;
+    float groundCheck = .3f;
     float rotationLock = 5;
     float resetGrav;
     float height; // How tall the Player is which will scale as they progress (Default: 1 unit tall)
@@ -76,13 +77,15 @@ public class BasicPhysics : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
-        Debug.DrawRay(transform.position, -playerUp.normalized * (groundCheck), Color.red, 0);
+    {   
+        scaleCheck = transform.localScale.magnitude;
+        Debug.DrawRay(transform.position, -playerUp.normalized * (QuickMath(scaleCheck) - .4f), Color.red, 0);
         float joyH = Input.GetAxis("Horizontal");
         float joyV = Input.GetAxis("Vertical");
         jumpInput = Input.GetButton("Jump") ? 1 : 0;
         playerInput = new Vector3(joyH, 0f, joyV);
         lvcv = playerBody.velocity.magnitude;
+        if(Input.GetButton("Eat")){eatBox.enabled = true;}else{eatBox.enabled = false;}
     }
 
     void FixedUpdate()
@@ -96,16 +99,16 @@ public class BasicPhysics : MonoBehaviour
     // Run through code steps to begin applying the physics
 
     // Raycast to detect ground
-    if(Physics.Raycast(transform.position, -playerUp.normalized, out hit, groundCheck, GetGround()))
+    if(Physics.Raycast(transform.position, -playerUp.normalized, out hit, (QuickMath(scaleCheck) - .4f), GetGround()))
         {
             isGrounded = true;
             isFalling = false;
             groundNormal = hit.normal.normalized;
             groundPoint = hit.point;
             groundAngle = Vector3.Angle(worldUp, groundNormal);
-            groundCheck = .5f;
+            groundCheck = .1f;
             if(groundAngle <= 60){playerUp = worldUp;} else{playerUp = groundNormal;}
-            playerBody.position = groundPoint + (Vector3.up * groundCheck);
+            playerBody.position = groundPoint + (Vector3.up * (QuickMath(scaleCheck) - .4f));
             GetMoving();
         }
     else
@@ -114,7 +117,7 @@ public class BasicPhysics : MonoBehaviour
             isFalling = true;
             playerUp = worldUp;
             groundNormal = playerUp;
-            groundCheck = .8f;
+            groundCheck = .3f;
             GetFalling();
         }
 
@@ -260,7 +263,7 @@ public class BasicPhysics : MonoBehaviour
 
     void DisplayText()
     {
-        testText.text = "Velocity: " + playerBody.velocity.ToString() + "\nJumping: " + jumpInput.ToString();
+        testText.text = "Velocity: " + playerBody.velocity.ToString() + "\nJumping: " + jumpInput.ToString() + "\nLocalScale: " + (QuickMath(scaleCheck) - .4f).ToString();
     }
     
     public LayerMask GetGround()
