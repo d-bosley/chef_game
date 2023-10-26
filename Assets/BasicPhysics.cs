@@ -73,6 +73,7 @@ public class BasicPhysics : MonoBehaviour
         playerUp = worldUp;
         verticalReset = new Vector3 (playerBody.velocity.x, 0f, playerBody.velocity.z);
         resetGrav = .46f;
+        eatBox.enabled = false;
     }
 
     // Update is called once per frame
