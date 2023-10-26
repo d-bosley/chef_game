@@ -16,7 +16,7 @@ public class Enemy : MonoBehaviour
     public Transform wanderingArea; // The center of the wandering area
     public float wanderRadius = 10f; // Radius within the wandering area
     public float wanderInterval = 5f; // Time between wander movements
-    public navmesh navmesh;
+    public NavMeshAgent navmesh;
     private Vector3 randomDestination;
     private float lastWanderTime;
 
