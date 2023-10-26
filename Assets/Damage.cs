@@ -31,7 +31,7 @@ public class Damage : MonoBehaviour
             else
             {
             Vector3 scale = player.transform.localScale;
-            float shrink = Vector3.one * 1.5f;
+            Vector3 shrink = Vector3.one * 1.5f;
             scale -= shrink;
             player.transform.localScale = scale;
             }
