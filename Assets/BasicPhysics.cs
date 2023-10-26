@@ -78,8 +78,8 @@ public class BasicPhysics : MonoBehaviour
     // Update is called once per frame
     void Update()
     {   
-        scaleCheck = transform.localScale.magnitude;
-        Debug.DrawRay(transform.position, -playerUp.normalized * (QuickMath(scaleCheck) - .4f), Color.red, 0);
+        scaleCheck = transform.lossyScale.y;
+        Debug.DrawRay(transform.position, -playerUp.normalized * scaleCheck, Color.red, 0);
         float joyH = Input.GetAxis("Horizontal");
         float joyV = Input.GetAxis("Vertical");
         jumpInput = Input.GetButton("Jump") ? 1 : 0;
@@ -99,7 +99,7 @@ public class BasicPhysics : MonoBehaviour
     // Run through code steps to begin applying the physics
 
     // Raycast to detect ground
-    if(Physics.Raycast(transform.position, -playerUp.normalized, out hit, (QuickMath(scaleCheck) - .4f), GetGround()))
+    if(Physics.Raycast(transform.position, -playerUp.normalized, out hit, scaleCheck, GetGround()))
         {
             isGrounded = true;
             isFalling = false;
@@ -108,7 +108,7 @@ public class BasicPhysics : MonoBehaviour
             groundAngle = Vector3.Angle(worldUp, groundNormal);
             groundCheck = .1f;
             if(groundAngle <= 60){playerUp = worldUp;} else{playerUp = groundNormal;}
-            playerBody.position = groundPoint + (Vector3.up * (QuickMath(scaleCheck) - .4f));
+            playerBody.position = groundPoint + (Vector3.up * scaleCheck);
             GetMoving();
         }
     else
@@ -263,7 +263,7 @@ public class BasicPhysics : MonoBehaviour
 
     void DisplayText()
     {
-        testText.text = "Velocity: " + playerBody.velocity.ToString() + "\nJumping: " + jumpInput.ToString() + "\nLocalScale: " + (QuickMath(scaleCheck) - .4f).ToString();
+        testText.text = "Velocity: " + playerBody.velocity.ToString() + "\nJumping: " + jumpInput.ToString() + "\nHeight: " + transform.lossyScale.y.ToString();
     }
     
     public LayerMask GetGround()
