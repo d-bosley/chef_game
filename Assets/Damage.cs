@@ -21,7 +21,7 @@ public class Damage : MonoBehaviour
 
     void OnCollisionStay(Collision other)
     {
-        if (other.CompareTag("Enemy"))
+        if (other.gameObject.CompareTag("Enemy"))
         {
             if (!larger)
             {
