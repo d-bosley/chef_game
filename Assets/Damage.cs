@@ -21,21 +21,21 @@ public class Damage : MonoBehaviour
 
     void OnCollisionStay(Collision other)
     {
-        if (other.gameObject.CompareTag("Enemy"))
-        {
-            if (!larger)
-            {
+//        if (other.gameObject.CompareTag("Enemy"))
+//        {
+//            if (!larger)
+//            {
             // Show death screen
-            }
-            
-            else
-            {
-            Vector3 scale = player.transform.localScale;
-            Vector3 shrink = Vector3.one * 1.5f;
-            scale -= shrink;
-            player.transform.localScale = scale;
-            }
-        }
+//            }
+//            
+//            else
+//            {
+//            Vector3 scale = player.transform.localScale;
+//            Vector3 shrink = Vector3.one * 1.5f;
+//            scale -= shrink;
+//            player.transform.localScale = scale;
+//            }
+//        }
 
     }
 }
