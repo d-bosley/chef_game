@@ -15,7 +15,7 @@ public class Damage : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-    larger = player.transform.localScale.magnitude > 1 : true ? false;
+    larger = player.transform.localScale.magnitude > 1 ? true : false;
     }
 
     void OnCollisionStay(Collider other)
