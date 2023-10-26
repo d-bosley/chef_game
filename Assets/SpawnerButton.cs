@@ -8,6 +8,7 @@ public class SpawnerButton : MonoBehaviour
 {
     public Spawner spawnScript;
     public GameObject enemy;
+    public Transform parent;
 
     // Start is called before the first frame update
     void Start()
@@ -27,7 +28,7 @@ public class SpawnerButton : MonoBehaviour
         {
             for(int i = 0; i < 4; i++)
             {
-                spawnScript.enemyClone(i);
+                spawnScript.enemyClone(i, parent);
             }
             
             //spawnScript.enemyClone(1);
