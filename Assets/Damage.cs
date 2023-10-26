@@ -19,7 +19,7 @@ public class Damage : MonoBehaviour
     larger = player.transform.localScale.magnitude > 1 ? true : false;
     }
 
-    void OnCollisionStay(Collider other)
+    void OnCollisionStay(Collision other)
     {
         if (other.CompareTag("Enemy"))
         {
