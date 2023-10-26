@@ -39,7 +39,7 @@ public class EnemyHolder : MonoBehaviour
 
         //currentEnemies = children.Length;
         
-        currentEnemies = transform.childCount;
+        currentEnemies = parent.childCount;
 
         if(currentEnemies < maxEnemy)
         {
