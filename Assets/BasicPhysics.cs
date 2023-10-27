@@ -58,6 +58,7 @@ public class BasicPhysics : MonoBehaviour
     public bool isFalling = false;
     public bool hasJumped;
     public bool canJump;
+    public bool moving;
     public Collider crouchBox;
     public Collider standBox;
     public Color calm = Color.blue;
@@ -87,6 +88,7 @@ public class BasicPhysics : MonoBehaviour
         playerInput = new Vector3(joyH, 0f, joyV);
         lvcv = playerBody.velocity.magnitude;
         if(Input.GetButton("Eat")){eatBox.enabled = true;}else{eatBox.enabled = false;}
+        moving = lvcv > 0 ? true : false;
     }
 
     void FixedUpdate()
