@@ -89,8 +89,10 @@ public class BasicPhysics : MonoBehaviour
         playerInput = new Vector3(joyH, 0f, joyV);
         lvcv = playerBody.velocity.magnitude;
         if(Input.GetButton("Eat")){eatBox.enabled = true;}else{eatBox.enabled = false;}
+        dancing = (Input.GetButton("Dance")) ? true : false;
         moving = lvcv > 0 ? true : false;
         animator.SetBool("isMoving", moving);
+        animator.SetBool("isDancing", dancing);
         if (scaleCheck > .75f && Input.GetButton("Fart")){DoubleJump();}
     }
 
