@@ -15,7 +15,7 @@ public class EnemyHolder : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        spawnTimer -= 1 * Time.Time;
+        spawnTimer -= 1 * Time.time;
 
         if(spawnTimer >= 0)
         {
