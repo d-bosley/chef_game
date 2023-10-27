@@ -60,6 +60,7 @@ public class BasicPhysics : MonoBehaviour
     public bool hasJumped;
     public bool canJump;
     public bool moving;
+    public bool dancing;
     public Collider crouchBox;
     public Collider standBox;
     public Color calm = Color.blue;
