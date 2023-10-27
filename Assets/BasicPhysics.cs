@@ -275,7 +275,7 @@ public class BasicPhysics : MonoBehaviour
     velocityVertical = fartPower;
     velocity = velocityLateral + velocityVertical;
 	playerBody.velocity = velocity;
-    transform.localscale = Vector3.one * .5f;
+    transform.localScale = Vector3.one * .5f;
     }
 
     void DisplayText()
