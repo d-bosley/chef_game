@@ -89,12 +89,12 @@ public class BasicPhysics : MonoBehaviour
         lvcv = playerBody.velocity.magnitude;
         if(Input.GetButton("Eat")){eatBox.enabled = true;}else{eatBox.enabled = false;}
         moving = lvcv > 0 ? true : false;
+        if (scaleCheck > .75f && Input.GetButton("Fart")){DoubleJump();}
     }
 
     void FixedUpdate()
     {
         SetCorePhysics();
-        if (scaleCheck > .75f && Input.GetButton("Fart")){DoubleJump();}
         DisplayText();
     }
 
@@ -269,7 +269,7 @@ public class BasicPhysics : MonoBehaviour
     {
     Vector3 velocity = playerBody.velocity;
     vectorSplit(velocity, out Vector3 velocityLateral, out Vector3 velocityVertical);
-    float fart = 5;
+    float fart = 8;
     float fartForce = fart * scaleCheck;
     Vector3 fartPower = Vector3.up * fartForce;
     velocityVertical = fartPower;
