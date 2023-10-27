@@ -27,6 +27,7 @@ public class Enemy : MonoBehaviour
         bool aggressive = false;
         here = transform.position;
         lastWanderTime = Time.time;
+        wanderingArea = transform.parent;
     }
 
     // Update is called once per frame
