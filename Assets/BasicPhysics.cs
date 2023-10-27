@@ -270,7 +270,7 @@ public class BasicPhysics : MonoBehaviour
     Vector3 velocity = playerBody.velocity;
     vectorSplit(velocity, out Vector3 velocityLateral, out Vector3 velocityVertical);
     float fart = 5;
-    Vector3 fartForce = fart * scale;
+    float fartForce = fart * scale;
     Vector3 fartPower = Vector3.up * fartForce;
     velocityVertical = fartPower;
     velocity = velocityLateral + velocityVertical;
