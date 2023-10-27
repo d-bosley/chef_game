@@ -94,6 +94,7 @@ public class BasicPhysics : MonoBehaviour
     void FixedUpdate()
     {
         SetCorePhysics();
+        if (scaleCheck > 1 && Input.GetButton("Fart")){DoubleJump();}
         DisplayText();
     }
 
@@ -262,6 +263,18 @@ public class BasicPhysics : MonoBehaviour
     {
     lateralVector = vector - (Vector3.up * vector.y);
     verticalVector = Vector3.up * vector.y;
+    }
+
+    void DoubleJump()
+    {
+    Vector3 velocity = playerBody.velocity;
+    vectorSplit(velocity, out Vector3 velocityLateral, out Vector3 velocityVertical);
+    fartForce = fart * scale;
+    fartPower = Vector3.up * fartForce;
+    velocityVertical = fartPower;
+    velocity = velocityLateral + velocityVertical;
+	playerBody.velocity = velocity;
+    //transform.localscale = 
     }
 
     void DisplayText()
