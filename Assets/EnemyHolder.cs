@@ -10,12 +10,12 @@ public class EnemyHolder : MonoBehaviour
     public int maxEnemy = 4;
     private Transform[] children;
     private int currentEnemies;
+    float spawnTimer = 10;;
 
     // Start is called before the first frame update
     void Start()
     {
-        float spawnTimer = 5;
-        spawnTimer -= 1 * Time.deltaTime;
+        spawnTimer -= 1 * Time.Time;
 
         if(spawnTimer >= 0)
         {
@@ -24,7 +24,7 @@ public class EnemyHolder : MonoBehaviour
             spawnScript.enemyClone(i, parent);
             Debug.Log("Enemy " + i + " has spawned");
         }
-        spawnTimer = 1;
+        spawnTimer = 10;
         }
     }
 
@@ -38,15 +38,20 @@ public class EnemyHolder : MonoBehaviour
         //}
 
         //currentEnemies = children.Length;
-        
         currentEnemies = parent.childCount;
-
+        
         if(currentEnemies < maxEnemy)
         {
+            spawnTimer -= 1 * Time.time;
+            if(spawnTimer <=0)
+            {
             int enemyCheck = currentEnemies + 1; 
             spawnScript.enemyClone(enemyCheck, parent);
+            spawnTimer = 10;
+            }
         }
 
         Debug.Log(currentEnemies);
+
     }
 }
