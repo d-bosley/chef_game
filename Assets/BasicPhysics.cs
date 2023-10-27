@@ -11,6 +11,7 @@ public class BasicPhysics : MonoBehaviour
     public Rigidbody playerBody;
     public Collider eatBox;
     public TextMeshProUGUI testText;
+    public Animator animator;
     public float accv; // Acceleration Value (18f)
     public float decv; // Deceleration Value (21f)
     public float fric; // Friction (18f)
@@ -89,6 +90,7 @@ public class BasicPhysics : MonoBehaviour
         lvcv = playerBody.velocity.magnitude;
         if(Input.GetButton("Eat")){eatBox.enabled = true;}else{eatBox.enabled = false;}
         moving = lvcv > 0 ? true : false;
+        animator.SetBool("isMoving", moving);
         if (scaleCheck > .75f && Input.GetButton("Fart")){DoubleJump();}
     }
 
