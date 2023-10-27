@@ -280,7 +280,7 @@ public class BasicPhysics : MonoBehaviour
 
     void DisplayText()
     {
-        testText.text = "Velocity: " + playerBody.velocity.ToString() + "\nJumping: " + jumpInput.ToString() + "\nHeight: " + transform.lossyScale.ToString();
+        testText.text = "Velocity: " + playerBody.velocity.ToString() + "\nJumping: " + jumpInput.ToString() + "\nHeight: " + transform.lossyScale.ToString() + "\nScale: " + scaleCheck.ToString();
     }
     
     public LayerMask GetGround()
