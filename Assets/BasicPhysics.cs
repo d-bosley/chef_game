@@ -94,7 +94,7 @@ public class BasicPhysics : MonoBehaviour
     void FixedUpdate()
     {
         SetCorePhysics();
-        if (scaleCheck > 1 && Input.GetButton("Fart")){DoubleJump();}
+        if (scaleCheck > .75f && Input.GetButton("Fart")){DoubleJump();}
         DisplayText();
     }
 
@@ -280,7 +280,7 @@ public class BasicPhysics : MonoBehaviour
 
     void DisplayText()
     {
-        testText.text = "Velocity: " + playerBody.velocity.ToString() + "\nJumping: " + jumpInput.ToString() + "\nHeight: " + transform.lossyScale.ToString() + "\nScale: " + scaleCheck.ToString();
+        testText.text = "Velocity: " + playerBody.velocity.ToString() + "\nJumping: " + jumpInput.ToString() + "\nHeight: " + transform.lossyScale.ToString() + "\nScale: " + transform.localScale.ToString();
     }
     
     public LayerMask GetGround()
