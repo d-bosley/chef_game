@@ -34,13 +34,13 @@ public class Enemy : MonoBehaviour
     {
         if(!aggressive)
         {
-//            if (Time.time - lastWanderTime >= wanderInterval)
-//            {
-//                Wander();
-//            }
-            SetMovementDestination(here, out Vector3 finalPlace);
-            destination = finalPlace;
-            transform.position = Vector3.MoveTowards(transform.position, destination, .35f);
+            if (Time.time - lastWanderTime >= wanderInterval)
+            {
+                Wander();
+            }
+            //SetMovementDestination(here, out Vector3 finalPlace);
+            //destination = finalPlace;
+            //transform.position = Vector3.MoveTowards(transform.position, destination, .35f);
         }
     }
 
@@ -88,7 +88,8 @@ public class Enemy : MonoBehaviour
         if(other.CompareTag("Player"))
         {
             aggressive = true;
-            destination = other.transform.position;
+            ChasePlayer(other);
+            //destination = other.transform.position;
         }
     }
 
@@ -97,7 +98,8 @@ public class Enemy : MonoBehaviour
         if(other.CompareTag("Player"))
         {
             aggressive = false;
-            destination = destination;
+            StopChasingPlayer(other);
+            //destination = destination;
         }
     }
 }
