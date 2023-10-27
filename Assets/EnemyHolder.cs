@@ -10,7 +10,7 @@ public class EnemyHolder : MonoBehaviour
     public int maxEnemy = 4;
     private Transform[] children;
     private int currentEnemies;
-    float spawnTimer = 10;;
+    float spawnTimer = 10;
 
     // Start is called before the first frame update
     void Start()
@@ -39,7 +39,7 @@ public class EnemyHolder : MonoBehaviour
 
         //currentEnemies = children.Length;
         currentEnemies = parent.childCount;
-        
+
         if(currentEnemies < maxEnemy)
         {
             spawnTimer -= 1 * Time.time;
