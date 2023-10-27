@@ -88,7 +88,7 @@ public class Enemy : MonoBehaviour
         if(other.CompareTag("Player"))
         {
             aggressive = true;
-            ChasePlayer(other);
+            ChasePlayer(other.gameObject);
             //destination = other.transform.position;
         }
     }
@@ -98,7 +98,7 @@ public class Enemy : MonoBehaviour
         if(other.CompareTag("Player"))
         {
             aggressive = false;
-            StopChasingPlayer(other);
+            StopChasingPlayer(other.gameObject);
             //destination = destination;
         }
     }
