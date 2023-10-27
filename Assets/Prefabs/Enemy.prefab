@@ -373,11 +373,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0e579a7d7fd57f4c9814f781f1f0d0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  navMeshAgent: {fileID: 6552261707553612889}
   destination: {x: 0, y: 0, z: 0}
-  waypoints: []
+  movezone: {fileID: 0}
   hitbox: {fileID: 8419846102888973613}
   aggressive: 0
+  afraid: 0
+  waypoints: []
+  wanderingArea: {fileID: 0}
+  wanderRadius: 10
+  wanderInterval: 5
+  navmesh: {fileID: 6552261707553612889}
 --- !u!195 &6552261707553612889
 NavMeshAgent:
   m_ObjectHideFlags: 0
